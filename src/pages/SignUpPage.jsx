@@ -86,9 +86,9 @@ const Signup = () => {
     <div className="mt-16 min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 py-8 px-4 sm:px-6 md:py-12">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row-reverse rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-gray-800 max-w-5xl mx-auto">
-          {/* Right Side - Illustration (shown on left on mobile) */}
+          {/* Illustration (shown below form on mobile, right side on desktop) */}
           <motion.div 
-            className="w-full md:w-1/2 bg-blue-50 dark:bg-blue-900/30 p-6 sm:p-8 lg:p-10 flex items-center justify-center"
+            className="w-full md:w-1/2 bg-blue-50 dark:bg-blue-900/30 p-6 sm:p-8 lg:p-10 flex items-center justify-center order-2 md:order-1"
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -101,9 +101,9 @@ const Signup = () => {
             />
           </motion.div>
           
-          {/* Left Side - Signup Form (shown on right on mobile) */}
+          {/* Signup Form (shown above illustration on mobile, left side on desktop) */}
           <motion.div 
-            className="w-full md:w-1/2 p-6 sm:p-8 lg:p-10"
+            className="w-full md:w-1/2 p-6 sm:p-8 lg:p-10 order-1 md:order-2"
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -276,14 +276,16 @@ const Signup = () => {
                 )}
               </div>
               
-              <motion.button
-                type="submit"
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-medium py-2.5 sm:py-3 rounded-lg shadow-md transition-all mt-6 text-sm sm:text-base"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Sign Up
-              </motion.button>
+              <div className="flex justify-center w-full">
+                <motion.button
+                  type="submit"
+                  className="w-full max-w-xs bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-medium py-2.5 sm:py-3 rounded-lg shadow-md transition-all mt-6 text-sm sm:text-base"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Sign Up
+                </motion.button>
+              </div>
             </form>
             
             <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-6 text-center">

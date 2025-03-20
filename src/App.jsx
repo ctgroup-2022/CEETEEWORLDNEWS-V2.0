@@ -69,7 +69,7 @@ function AppContent({ searchQuery, setSearchQuery }) {
   return (
     <>
       {!isLandingPage && <Panels key={location.pathname} />}
-      <FloatingCharacterPopup />
+      {!isAdminDashboard && <FloatingCharacterPopup />}
       {(!isLandingPage && !isAdminDashboard) && <Navbar searchQuery={searchQuery} onSearch={setSearchQuery} />}
 
       <Routes>

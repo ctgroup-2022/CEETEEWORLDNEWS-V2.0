@@ -28,15 +28,8 @@ const Panels = ({ section }) => {
         clipPath: "circle(0%)",
         skewX: 0,
         duration: 1,
-      })
-      .to(
-        ".page-main",
-        {
-          clipPath: "circle(100%)",
-          duration: 1,
-        },
-        "-=0.3"
-      );
+      });
+      // Removed the animation targeting .page-main since it doesn't exist
   }, [section]); // Re-run animation when the section changes.
 
   return (
@@ -47,7 +40,6 @@ const Panels = ({ section }) => {
       <li className="panel"></li>
       <li className="panel"></li>
       <li className="panel"></li>
-      
     </ul>
   );
 };

@@ -89,7 +89,7 @@ const Landing = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 mb-6 leading-tight">
+          <h1 className="text-5xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 mb-6 leading-tight">
             CEETEE World News
           </h1>
           <p className="text-gray-300 md:text-xl mb-10 max-w-2xl mx-auto">
@@ -97,12 +97,12 @@ const Landing = () => {
           </p>
 
           {/* Interactive Buttons with Hover Effects */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-8">
             <motion.button
               onClick={handleGetStarted}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full shadow-lg hover:shadow-blue-500/50 transition-all"
+              className="w-40 h-12 sm:w-44 sm:h-14 md:w-48 md:h-16 text-base sm:text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full shadow-lg hover:shadow-blue-500/50 transition-all flex items-center justify-center"
             >
               Get Started
             </motion.button>
@@ -110,13 +110,14 @@ const Landing = () => {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="flex justify-center w-full sm:w-auto"
             >
               <Link
                 to="/login"
-                className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full shadow-lg hover:shadow-purple-500/50 flex items-center justify-center transition-all"
+                className="w-40 h-12 sm:w-44 sm:h-14 md:w-48 md:h-16 text-base sm:text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full shadow-lg hover:shadow-purple-500/50 flex items-center justify-center transition-all"
               >
                 <span>Login</span>
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </Link>

@@ -74,15 +74,15 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="mt-16 flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 py-8 px-4 sm:px-6 md:py-12">
+    <div className="mt-16 flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 py-8 px-4 sm:px-6 md:py-12">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-gray-800 max-w-5xl mx-auto">
-          {/* Left Side - Illustration */}
+        <div className="flex flex-col md:flex-row-reverse rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-gray-800 max-w-5xl mx-auto">
+          {/* Illustration Section (shown below form on mobile, right side on desktop) */}
           <motion.div 
-            className="w-full md:w-1/2 bg-purple-50 dark:bg-purple-900/30 p-6 sm:p-8 lg:p-10 flex items-center justify-center"
-            initial={{ opacity: 0, x: -100 }}
+            className="w-full md:w-1/2 bg-purple-50 dark:bg-purple-900/30 p-6 sm:p-8 lg:p-10 flex items-center justify-center order-2 md:order-1"
+            initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <StudyIllustration 
               type="login" 
@@ -92,10 +92,10 @@ const LoginPage = () => {
             />
           </motion.div>
           
-          {/* Right Side - Login Form */}
+          {/* Form Section (shown above illustration on mobile, left side on desktop) */}
           <motion.div 
-            className="w-full md:w-1/2 p-6 sm:p-8 lg:p-10"
-            initial={{ opacity: 0, x: 100 }}
+            className="w-full md:w-1/2 p-6 sm:p-8 lg:p-10 order-1 md:order-2"
+            initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
@@ -106,7 +106,7 @@ const LoginPage = () => {
               Sign in to continue to your account
             </p>
             
-            <form className="mt-6 space-y-5">
+            <form className="mt-6 space-y-5 max-w-md mx-auto">
               <div className="relative">
                 <label
                   htmlFor="email"
@@ -215,14 +215,16 @@ const LoginPage = () => {
                 )}
               </div>
               
-              <motion.button
-                type="submit"
-                className="w-full px-4 py-2.5 sm:py-3 mt-2 text-white bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-500 hover:to-purple-700 dark:from-purple-500 dark:to-purple-700 dark:hover:from-purple-400 dark:hover:to-purple-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 font-medium text-sm sm:text-base"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Login
-              </motion.button>
+              <div className="flex justify-center w-full">
+                <motion.button
+                  type="submit"
+                  className="w-full max-w-xs px-4 py-2.5 sm:py-3 mt-2 text-white bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-500 hover:to-purple-700 dark:from-purple-500 dark:to-purple-700 dark:hover:from-purple-400 dark:hover:to-purple-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 font-medium text-sm sm:text-base"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Login
+                </motion.button>
+              </div>
             </form>
             
             <p className="mt-6 text-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
