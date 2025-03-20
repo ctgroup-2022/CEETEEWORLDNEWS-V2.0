@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const StudyIllustration = ({ type }) => {
+const StudyIllustration = ({ 
+  type, 
+  primaryColor = "text-gray-800 dark:text-gray-200", 
+  secondaryColor = "text-gray-600 dark:text-gray-400",
+  accentColor = "text-gray-700 dark:text-gray-300"
+}) => {
   // News-themed colors based on brand colors
   const colors = {
     primary: "#074F9D", // Primary blue
@@ -527,8 +532,7 @@ const StudyIllustration = ({ type }) => {
       
       {/* Title text */}
       <motion.h3 
-        className="text-xl font-bold"
-        style={{ color: type === "login" ? colors.primary : colors.darkBlue }}
+        className={`text-xl font-bold ${primaryColor}`}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2 }}
@@ -538,8 +542,7 @@ const StudyIllustration = ({ type }) => {
       
       {/* Description text */}
       <motion.p 
-        className="text-center max-w-xs mt-2"
-        style={{ color: colors.gray }}
+        className={`text-center max-w-xs mt-2 ${secondaryColor}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.9 }}
         transition={{ delay: 1.4 }}
