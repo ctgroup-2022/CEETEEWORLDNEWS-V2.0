@@ -35,7 +35,7 @@ export const createSignupAd = async (req, res) => {
 // Get all signup ads
 export const getAllSignupAds = async (req, res) => {
   try {
-    const ads = await SignupAds.find().sort({ createdAt: -1 });
+    const ads = await SignupAds.find().sort({ sequence: 1 });
     res.status(200).json({ 
       success: true,
       count: ads.length,

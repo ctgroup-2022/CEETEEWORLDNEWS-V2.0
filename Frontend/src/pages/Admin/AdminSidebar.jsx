@@ -60,7 +60,18 @@ const AdminSidebar = ({ theme, toggleTheme, activeTab, setActiveTab }) => {
             }`}
         >
           <FaHome size={20} />
-          {isOpen && <span>Dashboard</span>}
+          {isOpen && <span>SignUp Ads</span>}
+        </button>
+        <button
+          onClick={() => handleTabClick("SignupAds")}
+          title={!isOpen ? "SignupAds" : ""}
+          className={`w-full flex items-center ${!isOpen ? "justify-center" : "space-x-4"} px-4 py-3 rounded-lg transition-all duration-200 ${isActive("SignupAds")
+            ? "bg-white/10 backdrop-blur-sm shadow-inner border-l-4 border-white"
+            : "hover:bg-indigo-700/50 dark:hover:bg-gray-700/50"
+            }`}
+        >
+          <FaHome size={20} />
+          {isOpen && <span>SignUp Ads</span>}
         </button>
 
         <button

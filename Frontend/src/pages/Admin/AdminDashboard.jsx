@@ -3,6 +3,7 @@ import AdminSidebar from "./AdminSidebar";
 import AdminNewsForm from "./AdminNewsForm";
 import AdminHeadlinesForm from "./AdminHeadlinesForm";
 import Dashboard from "./Dashboard";
+import SignupAds from "./SignupAds";
 
 const AdminDashboard = () => {
   const [theme, setTheme] = useState("light");
@@ -19,6 +20,8 @@ const AdminDashboard = () => {
         return <AdminNewsForm />;
       case "headlines":
         return <AdminHeadlinesForm />;
+        case "SignupAds":
+        return <SignupAds/>
       default:
         return <Dashboard/>;
     }
