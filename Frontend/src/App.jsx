@@ -15,7 +15,7 @@ import Contact from "./pages/Contact";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import LoginPage from "./pages/LoginPage";
 import Signup from "./pages/SignUpPage";
-import Landing from "./pages/LandingPage";
+// import Landing from "./pages/LandingPage";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -70,11 +70,11 @@ function AppContent({ searchQuery, setSearchQuery }) {
     <>
       {!isLandingPage && <Panels key={location.pathname} />}
       {!isAdminDashboard && <FloatingCharacterPopup />}
-      {(!isLandingPage && !isAdminDashboard) && <Navbar searchQuery={searchQuery} onSearch={setSearchQuery} />}
+      {( !isAdminDashboard) && <Navbar searchQuery={searchQuery} onSearch={setSearchQuery} />}
 
       <Routes>
-        <Route path="/" element={<Landing searchQuery={searchQuery} />} />
-        <Route path="/home" element={<Home searchQuery={searchQuery} />} />
+        {/* <Route path="/" element={<Home searchQuery={searchQuery} />} /> */}
+        <Route path="/" element={<Home searchQuery={searchQuery} />} />
         <Route path="/login" element={<LoginPage searchQuery={searchQuery} />} />
         <Route path="/signup" element={<Signup searchQuery={searchQuery} />} />
         <Route path="/ctuniversity" element={<CTUniversity searchQuery={searchQuery} />} />

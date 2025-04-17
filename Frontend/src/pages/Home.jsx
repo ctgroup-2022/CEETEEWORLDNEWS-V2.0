@@ -16,6 +16,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Importing ico
 import '../index.css';
 import JoinedImageArches from "../components/Navbar/joined-image-arches";
 import SplitScreenBlob from "../components/SplitScreenBlob";
+import Landing from "./LandingPage";
 
 function Home({ searchQuery }) {
   const { theme } = useTheme();
@@ -391,12 +392,15 @@ function Home({ searchQuery }) {
 
   return (
     <div className={`min-h-screen ${theme === 'light' ? 'bg-gray-50 text-gray-900' : 'bg-gray-800 text-white'}`}>
+
+
       <div className={`mt-[88px] px-5 md:px-6 lg:px-6 py-4 ${theme === 'light' ? 'bg-gray-50' : 'bg-gray-800'}`}>
         <BreakingNews />
       </div>
       <div className={`${theme === 'light' ? 'bg-gray-50' : 'bg-gray-800'}`}>
         <Banner imageUrl={BannerImg} altText="Banner" />
       </div>
+
 
       <div className="relative flex flex-col items-center">
         {/* Heading */}
